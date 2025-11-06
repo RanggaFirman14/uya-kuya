@@ -1,0 +1,231 @@
+/* Umum */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #1e824c;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+  background: url("https://images.unsplash.com/photo-1554284126-aa88f22d8b74") no-repeat center/cover;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero-text span {
+  color: #00ff99;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #00c26e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #009e5a;
+}
+
+/* Tips (rapi & konsisten) */
+.tips {
+  padding: 60px 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.tips-container {
+  width: min(1100px, 100%);
+  margin: 30px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.tip {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+  text-align: left;
+}
+
+.tip:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.tip img {
+  width: 100%;
+  aspect-ratio: 16/9;     /* proporsional modern */
+  object-fit: cover;      /* crop proporsional */
+  border-radius: 8px;
+  display: block;
+}
+
+/* Galeri (lebih besar & rapi) */
+.galeri {
+  background: #f7f7f7;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.galeri-container {
+  width: min(1200px, 100%);
+  margin: 30px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.galeri-item {
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.galeri-container img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform .28s ease, box-shadow .28s ease;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.galeri-container img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+/* Responsif: sesuaikan aspect-ratio / spacing pada layar kecil */
+@media (max-width: 768px) {
+  .tip img { aspect-ratio: 4/3; }
+  .galeri-container img { aspect-ratio: 4/3; height: auto; }
+  .tips, .galeri { padding: 36px 14px; }
+  .tips-container { gap: 16px; }
+  .galeri-container { gap: 12px; }
+}
+  
+/* Fallback untuk browser lama: jika aspect-ratio tidak didukung, gunakan tinggi aman */
+@supports not (aspect-ratio: 1/1) {
+  .tip img { height: 220px; }
+  .galeri-container img { height: 240px; }
+}
+
+/* Langganan */
+.langganan {
+  padding: 60px 20px;
+  text-align: center;
+  background: #1e824c;
+  color: white;
+}
+
+.langganan form {
+  margin-top: 20px;
+}
+
+.langganan input {
+  padding: 10px;
+  width: 250px;
+  border: none;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+.langganan button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background: #00c26e;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.langganan button:hover {
+  background: #009e5a;
+}
+
+/* Footer */
+footer {
+  background: #145a32;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+}
